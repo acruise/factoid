@@ -8,6 +8,12 @@
     <artifactId>factoid</artifactId>
     <version>0.1-SNAPSHOT</version>
 
+    <properties>
+        <scala.version>2.10.1</scala.version>
+        <scala.binary.version>2.10</scala.binary.version>
+        <scala.plugin.version>3.1.5</scala.plugin.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.scala-lang</groupId>
@@ -18,20 +24,21 @@
             <groupId>io.spray</groupId>
             <artifactId>spray-json_${scala.binary.version}</artifactId>
             <version>1.2.5</version>
-        </dependency></dependencies>
-
-    <properties>
-        <scala.version>2.10.1</scala.version>
-        <scala.binary.version>2.10</scala.binary.version>
-        <scala.plugin.version>3.1.0</scala.plugin.version>
-    </properties>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+            </plugin>
+            <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
                 <version>${scala.plugin.version}</version>
+
                 <executions>
                     <execution>
                         <goals>
